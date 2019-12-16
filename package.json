@@ -1,0 +1,14 @@
+{
+  "name": "my-babel-plugin",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "kyrie",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.7.5",
+    "@babel/types": "^7.7.4",
+    "eslint": "^6.7.2",
+    "lodash": "^4.17.15"
+  }
+}
