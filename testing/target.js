@@ -15,6 +15,8 @@ if(n === 1 && flag && count < 50) {
  * @param {*} n 
  */
 function square(n) {
+  // hello ?
+  // second comment
   return n * n
 }
 // testing comment

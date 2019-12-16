@@ -9,9 +9,14 @@ const defaultOptions = {
 module.exports = function({ types: t}) {
   return {
     visitor: {
+      // 变量
+      Identifier(path) {
+        // 获取本次变量名
+        console.log('Identifier name', _.get(path, 'node.name'))
+      },
       // 调试内容
       DebuggerStatement(path, state) {
-        console.log('DebuggerState path >>> ', path);
+        // console.log('DebuggerState path >>> ', path);
         if(!state) return
         // console.log('DebuggerState ast body >>> ', _.get(state, 'file.ast.program.body'));
         // 插件启动参数
@@ -82,8 +87,16 @@ module.exports = function({ types: t}) {
       },
       // 函数声明
       FunctionDeclaration(path, state) {
-        console.log('path.node >>>>>> ', _.get(path, 'node'))
+        // console.log('FunctionDeclaration path >>>>>> ', path)
         if(!state || !state.opts || !state.opts.debugFn) return
+        // 查看函数作用域
+        // console.log(`${_.get(path, 'node.id.name')} scope`, _.get(path, 'scope'))
+        // console.info(`${_.get(path, 'node.id.name')} scope : >>>> `, _.get(path, 'scope'))
+        // 这里可以获取作用域前后注释
+        // console.log(`${_.get(path, 'node.id.name')} scope leadingComments >>> `, _.get(path, 'scope.block.leadingComments'))
+        // console.log(`${_.get(path, 'node.id.name')} scope innerComments >>> `, _.get(path, 'scope.path.node.innerComments'))
+        // console.log(`${_.get(path, 'node.id.name')} scope trailingComments >>> `, _.get(path, 'scope.path.node.trailingComments'))
+
         // path.insertBefore(t.expressionStatement(t.stringLiteral("Because I'm easy come, easy go.")));
         // path.insertAfter(t.expressionStatement(t.stringLiteral("A little high, little low.")));
         // 删除指定的调试函数

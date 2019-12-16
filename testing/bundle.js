@@ -12,6 +12,8 @@ if (foolish === 1 && flag && count < 50) {}
 
 
 function square(n) {
+  // hello ?
+  // second comment
   return n * n;
 } // testing comment
 
