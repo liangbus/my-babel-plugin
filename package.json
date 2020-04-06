@@ -5,10 +5,10 @@
   "author": "kyrie",
   "license": "MIT",
   "dependencies": {
-    "@babel/cli": "^7.7.5",
-    "@babel/core": "^7.7.5",
-    "@babel/types": "^7.7.4",
-    "eslint": "^6.7.2",
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/types": "^7.9.0",
+    "eslint": "^6.8.0",
     "lodash": "^4.17.15"
   }
 }

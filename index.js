@@ -33,7 +33,7 @@ module.exports = function({ types: t}) {
         // console.log(t.isDebuggerStatement())
         
       },
-      // 判断表达式
+      // 二元表达式
       BinaryExpression(path, state) {
         // console.log('In BinaryExpression state>> ', state)
         // console.log('BinaryExpression state.opts >>> ', state.opts);
